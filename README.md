@@ -8,31 +8,31 @@ https://shahovkit.github.io/Frame-Animator-Online/
 ## Features
 You can open your .FRM file and play animations.
 
-![Open frm](example/1.gif)
+![Open frm](https://github.com/shahovkit/Frame-Animator-Online/blob/master/Example/1.gif?raw=true)
 
 Animation can be cycled.
 
-![Cycled](example/2.gif)
+![Cycled](https://github.com/shahovkit/Frame-Animator-Online/blob/master/Example/2.gif?raw=true)
 
 Stop animation and choose any direction and any frame.
 
-![direction and frame](example/3.gif)
+![direction and frame](https://github.com/shahovkit/Frame-Animator-Online/blob/master/Example/3.gif?raw=true)
 
 Info about file and current frame.
 
-![info](example/4.gif)
+![info](https://github.com/shahovkit/Frame-Animator-Online/blob/master/Example/4.gif?raw=true)
 
 Smart centering frame. [what is it?](#different-smart-centering-and-simple-centering)
 
-![centering](example/5.gif)
+![centering](https://github.com/shahovkit/Frame-Animator-Online/blob/master/Example/5.gif?raw=true)
 
 Change background color.
 
-![background](example/6.gif)
+![background](https://github.com/shahovkit/Frame-Animator-Online/blob/master/Example/6.gif?raw=true)
 
 Export just **Sequence** png or **Atlas** animation with [smart centering.](#different-smart-centering-and-simple-centering)
 
-![export](example/7.gif)
+![export](https://github.com/shahovkit/Frame-Animator-Online/blob/master/Example/7.gif?raw=true)
 
 Also zoom via mouse scroll
 
