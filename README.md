@@ -48,6 +48,8 @@ No more headaches due to offsets!
 
 ## Not done yet
 
+Motion detection to disabling centering for export not moving animations
+
 Converting with animated palette, but animated palette already done
 
 Editing offsets
