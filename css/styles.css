@@ -1,73 +1,236 @@
-body, html {
-  background: #445566;
+body,
+html {
+  background: #474747;
   padding: 10px;
   font-family: Helvetica;
-  color: orange;
-  width:  100%;
+  color: #d6d6d6;
+  width: 100%;
   height: 100%;
-    margin:0;
-   padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 
 table {
-  border: 1px solid green;
   font-size: 10px;
+  border-collapse: collapse;
 }
 
-td, th {
-  border: 1px solid lightgreen;
+td,
+th {
+  border: 1px solid #252525;
 }
 
 progress {
   width: 100%;
 }
 
-span {
-  padding-top: 1px;
-  position: absolute;
-  left: 25%;
-  color: red;
-}
-
 canvas {
-  border: 1px solid green;
-  background: grey;
+  border: 0;
+  background: #404040;
   display: block;
-  position:relative;
-  float: center;
-  width:80%;
-  height:60%;
-  min-width: 10;
-  min-height: 10;
+  position: relative;
 }
 
-.d_main {
-  width: 100%;
-  height: 100%;
-  background: #445566;
-}
+.d_main {}
 
-.d_flex{
-   display: flex;
+.d_flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
 .d_row {
-  width: 100%;
-  background: #445566;
-  height: 100%;
- }
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 30px;
+}
 
-footer{
-   display: block; 
-   bottom:0;
-   width:100%;
-   height:50px;   /* Height of the footer */
-   background: #445566;
+footer {
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #445566;
 }
 
 thead,
 tbody {
-  background: #445566;
   display: block;
+}
+
+.navbar {
+  top: 0;
+  left: 0;
+  background: #474747;
+  display: flex;
+  font-family: "Open Sans", Sans-Serif;
+  font-size: 13px;
+}
+
+.navbar span {
+  display: block;
+  padding: 8px;
+  background: #474747;
+  color: #d1d1d1;
+  font-family: "Open Sans", Sans-Serif;
+  font-size: 13px;
+  margin: 0px;
+  float: left;
+}
+
+.navbar .dropdown button {
+  border: 0;
+  color: #e7e7e7;
+  border-radius: 4px;
+  background: #474747;
+  width: 100%;
+  text-align: left;
+}
+
+.navbar button:hover {
+  background: #616161;
+}
+
+table td {
+  padding: 2px 3px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-bar {
+  display: none;
+  position: absolute;
+  padding-top: 5px;
+}
+
+.dropdown-bar button {
+  padding: 3px 15px;
+}
+
+.navbar:hover .dropdown-bar {}
+
+.dropdown:hover .dropdown-bar {
+  display: block;
+  background: #474747;
+  padding: 2px 5px;
+  border: 1px solid #767676;
+  z-index: 100;
+  position: absolute;
+  top: 20px;
+}
+
+input[type="file"],
+input[type="checkbox"] {
+  display: none;
+}
+
+.main {}
+
+.checkbox-button {
+  padding: 2px 5px;
+}
+
+.navbar>* {
+  margin: 5px 2px;
+  display: flex;
+  align-items: center;
+}
+
+.range {
+  margin-right: 10px;
+}
+
+.checkbox-button:hover {
+  background: #666666;
+}
+
+.checkbox-button {}
+
+.navbar-item {
+  position: relative;
+}
+
+.navbar-item input[type="checkbox"]:checked+label.highlited {
+  box-shadow: inset 0 0 5px 1px #ffffffc7;
+}
+
+.navbar-item label {
+  border-radius: 4px;
+}
+
+.navbar-item input[type="checkbox"]:checked+label[for="play_button"] .fa-play {
+  display: none;
+}
+
+.navbar-item input[type="checkbox"]:checked+label[for="play_button"] .fa-stop {
+  display: block;
+}
+
+.navbar-item input[type="checkbox"]+label[for="play_button"] .fa-stop {
+  display: none;
+}
+
+.navbar-item input[type="checkbox"]+label[for="play_button"] .fa-play {
+  display: block;
+}
+
+.navbar-item input[type="checkbox"]+label[for="play_button"] {
+  width: 12px;
+}
+
+.navbar-item input[type="checkbox"]:disabled+label {
+  opacity: 0.2;
+}
+
+#color_picker {
+  background: #474747;
+  border: 0;
+}
+
+.navbar .dropdown button a {
+  color: #e7e7e7;
+}
+
+.dropdown-nested:hover .dropdown-nested-bar {
+  display: block;
+  background: #474747;
+  padding: 2px 5px;
+  border: 1px solid #767676;
+  z-index: 100;
+  position: absolute;
+  top: 0px;
+  left: 70px;
+}
+
+.dropdown-nested-bar {
+  display: none;
+}
+
+.dropdown-nested:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 5px solid #e7e7e7;
+  position: absolute;
+  right: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.filename {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 5px;
+  z-index: 50;
+  font-family: "Open Sans", Sans-Serif;
+  font-size: 12px;
 }

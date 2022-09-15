@@ -1,0 +1,98 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Frame Animator Online</title>
+  <meta name="description" content="Fallout 1/2 FRM Viewer Online.">
+  <meta name="author" content="Pateyta @ github.com/Pateyta">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .color {
+      width: 20;
+      height: 20;
+    }
+  </style>
+</head>
+
+<body style="
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+">
+  <script src="js/palette.js"></script>
+  <script type="text/javascript">
+    palette.forEach((RGBcolor, index) => {
+      let div = document.createElement("div");
+      div.classList.add("color");
+      if (index < 229) {
+        div.style.cssText = 'background: rgb(' + RGBcolor[0] * 4 + ', ' + RGBcolor[1] * 4 + ', ' + RGBcolor[2] * 4 + ');';
+      } else {
+        div.style.cssText = 'background: rgb(' + RGBcolor[0] + ', ' + RGBcolor[1] + ', ' + RGBcolor[2] + ');';
+      }
+
+      document.body.append(div)
+    });
+
+
+    function updatepalette() {
+
+      palette.forEach((RGBcolor, index) => {
+
+        if (index < 229) {
+          document.getElementsByClassName('color')[index].style.cssText = 'background: rgb(' + RGBcolor[0] * 4 + ', ' + RGBcolor[1] * 4 + ', ' + RGBcolor[2] * 4 + ');';
+        } else {
+          document.getElementsByClassName('color')[index].style.cssText = 'background: rgb(' + RGBcolor[0] + ', ' + RGBcolor[1] + ', ' + RGBcolor[2] + ');';
+        }
+      });
+    }
+
+    function animatepalette(paletteOffset, colors, timeInterval) {
+      setInterval(() => {
+        colors.push(colors.shift())
+        palette.splice(paletteOffset, colors.length, ...colors);
+        updatepalette();
+      }, timeInterval);
+    }
+    
+    function animatepaletteRed(paletteOffset,timeInterval) {
+      let red = 0
+      let increment = -4;
+
+      setInterval(() => {
+        if(red === 0 || red === 60){
+          increment = -increment;
+        }
+
+        red+=increment;
+
+        palette[paletteOffset] = [
+          red,
+          0,
+          0
+        ];
+
+        updatepalette();
+      }, timeInterval);
+    }
+
+    let slimeColors = [[0, 108, 0], [11, 115, 7], [27, 123, 15], [43, 131, 27]]; // Slime 229
+    let monitors = [[107, 107, 111], [99, 103, 127], [87, 107, 143], [0, 147, 163], [107, 187, 255]]; // Monitors 233
+    let fireSlow = [[255, 0, 0], [215, 0, 0], [147, 43, 11], [255, 119, 0], [255, 59, 0]]; // Slow fire 238
+    let fireFast = [[71, 0, 0], [123, 0, 0], [179, 0, 0], [123, 0, 0], [71, 0, 0]]; // Fast fire 243
+    let shoreline = [[83, 63, 43], [75, 59, 43], [67, 55, 39], [63, 51, 39], [55, 47, 35], [51, 43, 35]]; // Shoreline 248
+
+    animatepalette(229, slimeColors, 200)
+    animatepalette(238, fireSlow, 200)
+    animatepalette(248, shoreline, 200)
+    animatepalette(243, fireFast, 142)
+    animatepalette(233, monitors, 100)
+
+    animatepaletteRed(254, 33)
+
+
+  </script>
+</body>
+
+</html>
