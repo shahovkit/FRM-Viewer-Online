@@ -60,7 +60,7 @@ function FRMToJson(binary) {
         dataFRM.shift[direction].y = buffer.next(2).int16();
     }
 
-    for (direction = 0; direction < 6; direction++) { 
+    for (direction = 0; direction < 6; direction++) {
         dataFRM.offsetFrameArea.push(buffer.next(4).int32());
     }
 
@@ -92,7 +92,7 @@ function FRMToJson(binary) {
             dataFRM['directions'][direction][frame]['totalOffset']['x'] = totalOffset.x;
             dataFRM['directions'][direction][frame]['totalOffset']['y'] = totalOffset.y;
 
-            dataFRM['directions'][direction][frame]['reOffset'] = {x:totalOffset.x, y:totalOffset.y};
+            dataFRM['directions'][direction][frame]['reOffset'] = { x: totalOffset.x, y: totalOffset.y };
 
             let imageData = toImageData(
                 buffer.next(dataFRM['directions'][direction][frame]['totalPixels']).uint8Array(),
@@ -105,12 +105,12 @@ function FRMToJson(binary) {
         }
     }
 
-    isMove = dataFRM.directions.length > 1 && Math.abs(dataFRM.directions[1][dataFRM.framesPerDirection-1].totalOffset.x) > 16;
+    isMove = dataFRM.directions.length > 1 && Math.abs(dataFRM.directions[1][dataFRM.framesPerDirection - 1].totalOffset.x) > 16;
 
-    if(isMove) {
+    if (isMove) {
         reOffset(dataFRM);
     }
-        
+
     return dataFRM;
 }
 
@@ -224,8 +224,6 @@ function tick() {
         }
     }
     updateFramePicker(currentFrame);
-
-    
 }
 
 function loadFile(file) {

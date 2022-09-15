@@ -18,7 +18,12 @@ $(document).ready(function () {
 
 
   $('#play_button').on('change', function (e) {
-    debugger;
+    var currentFrame = parseInt($('#frame_picker').val());
+
+    if (currentFrame+1 === FRMJson.framesPerDirection){
+      updateFramePicker(0);
+    }
+    
     if (!e.currentTarget.checked) {
       stopAnimation()
     } else {
@@ -52,7 +57,6 @@ $(document).ready(function () {
   })
 
   $('#output').bind('wheel', function (event) {
-    debugger;
     event.preventDefault();
     scale += event.originalEvent.wheelDelta / 1000
     if (scale < 1) {
