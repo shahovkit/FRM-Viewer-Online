@@ -3,7 +3,7 @@ Fallout 1 and Fallout 2 Frame viewer and converter.
 
 ## Run
 Please visit the following website to run it:
-https://shahovkit.github.io/Frame-Animator-Online/
+https://shahovkit.github.io/FRM-Viewer-Online/
 
 ## Features
 You can open your .FRM file and play animations.
