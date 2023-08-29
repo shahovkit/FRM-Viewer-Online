@@ -1,4 +1,4 @@
-# Frame-Animator-Online
+# FRM Viewer and converter
 Fallout 1 and Fallout 2 Frame viewer and converter.
 
 ## Run
