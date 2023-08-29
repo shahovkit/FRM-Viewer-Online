@@ -1,5 +1,5 @@
 # Frame-Animator-Online
-Fallout 1 and Fallout 2 Frame Animator and converter.
+Fallout 1 and Fallout 2 Frame viewer and converter.
 
 ## Run
 Please visit the following website to run it:
